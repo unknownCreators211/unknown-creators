@@ -88,7 +88,7 @@ async def home(request: Request):
 @app.get("/login")
 async def login():
     flow = Flow.from_client_config(get_client_config(), scopes=SCOPES, redirect_uri=REDIRECT_URI)
-    auth_url, _ = flow.authorization_url(prompt='consent')
+    auth_url, _ = flow.authorization_url(prompt='select_account consent', login_hint=None, include_granted_scopes='false')
     return RedirectResponse(auth_url)
 
 @app.get("/callback")
