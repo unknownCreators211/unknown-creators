@@ -6,8 +6,10 @@ from fastapi.templating import Jinja2Templates
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import Flow
 from google.auth.transport.requests import Request as GoogleRequest
-import pickle
+from google.oauth2.credentials import Credentials
+import json
 import os
+import pickle
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -17,8 +19,22 @@ SCOPES = [
     'https://www.googleapis.com/auth/youtube.readonly',
     'https://www.googleapis.com/auth/yt-analytics.readonly'
 ]
-CREDS_PATH = os.path.expanduser('~/CreatorOS/credentials.json')
-TOKEN_PATH = os.path.expanduser('~/CreatorOS/token.pickle')
+
+CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
+CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
+REDIRECT_URI = os.environ.get('REDIRECT_URI', 'http://localhost:8000/callback')
+TOKEN_PATH = '/tmp/token.pickle'
+
+def get_client_config():
+    return {
+        "web": {
+            "client_id": CLIENT_ID,
+            "client_secret": CLIENT_SECRET,
+            "redirect_uris": [REDIRECT_URI],
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token"
+        }
+    }
 
 def get_credentials():
     if os.path.exists(TOKEN_PATH):
@@ -71,13 +87,13 @@ async def home(request: Request):
 
 @app.get("/login")
 async def login():
-    flow = Flow.from_client_secrets_file(CREDS_PATH, scopes=SCOPES, redirect_uri="https://unknown-creators-production.up.railway.app/callback")
+    flow = Flow.from_client_config(get_client_config(), scopes=SCOPES, redirect_uri=REDIRECT_URI)
     auth_url, _ = flow.authorization_url(prompt='consent')
     return RedirectResponse(auth_url)
 
 @app.get("/callback")
 async def callback(code: str):
-    flow = Flow.from_client_secrets_file(CREDS_PATH, scopes=SCOPES, redirect_uri="https://unknown-creators-production.up.railway.app/callback")
+    flow = Flow.from_client_config(get_client_config(), scopes=SCOPES, redirect_uri=REDIRECT_URI)
     flow.fetch_token(code=code)
     creds = flow.credentials
     with open(TOKEN_PATH, 'wb') as f:
@@ -99,7 +115,6 @@ async def youtube_overview():
         stats = ch['statistics']
         snippet = ch['snippet']
         created = snippet['publishedAt'][:10]
-        from datetime import datetime
         created_dt = datetime.strptime(created, '%Y-%m-%d')
         age_days = (datetime.today() - created_dt).days
         subs = int(stats.get('subscriberCount', 0))
@@ -130,7 +145,6 @@ async def youtube_overview():
             "subscribers": format_number(subs),
             "total_views": format_number(views),
             "total_videos": videos,
-            "channel_age_days": age_days,
             "avg_views": format_number(avg_views),
             "watch_time": format_number(watch_mins),
             "avg_duration": format_duration(avg_duration),
