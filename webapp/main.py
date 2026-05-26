@@ -71,13 +71,13 @@ async def home(request: Request):
 
 @app.get("/login")
 async def login():
-    flow = Flow.from_client_secrets_file(CREDS_PATH, scopes=SCOPES, redirect_uri="http://localhost:8000/callback")
+    flow = Flow.from_client_secrets_file(CREDS_PATH, scopes=SCOPES, redirect_uri="https://unknown-creators-production.up.railway.app/callback")
     auth_url, _ = flow.authorization_url(prompt='consent')
     return RedirectResponse(auth_url)
 
 @app.get("/callback")
 async def callback(code: str):
-    flow = Flow.from_client_secrets_file(CREDS_PATH, scopes=SCOPES, redirect_uri="http://localhost:8000/callback")
+    flow = Flow.from_client_secrets_file(CREDS_PATH, scopes=SCOPES, redirect_uri="https://unknown-creators-production.up.railway.app/callback")
     flow.fetch_token(code=code)
     creds = flow.credentials
     with open(TOKEN_PATH, 'wb') as f:
