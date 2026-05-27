@@ -5,11 +5,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import Flow
-from google.auth.transport.requests import Request as GoogleRequest
-from google.oauth2.credentials import Credentials
-import json
 import os
 import pickle
+
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '0'
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -78,6 +77,9 @@ def revenue_potential(views):
     except:
         return "N/A"
 
+# Store state in memory
+auth_states = {}
+
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     creds = get_credentials()
@@ -87,13 +89,27 @@ async def home(request: Request):
 
 @app.get("/login")
 async def login():
-    flow = Flow.from_client_config(get_client_config(), scopes=SCOPES, redirect_uri=REDIRECT_URI)
-    auth_url, _ = flow.authorization_url(prompt='select_account consent', login_hint=None, include_granted_scopes='false')
+    flow = Flow.from_client_config(
+        get_client_config(),
+        scopes=SCOPES,
+        redirect_uri=REDIRECT_URI
+    )
+    auth_url, state = flow.authorization_url(
+        prompt='select_account consent',
+        access_type='offline',
+        include_granted_scopes='true'
+    )
+    auth_states[state] = True
     return RedirectResponse(auth_url)
 
 @app.get("/callback")
-async def callback(code: str):
-    flow = Flow.from_client_config(get_client_config(), scopes=SCOPES, redirect_uri=REDIRECT_URI)
+async def callback(request: Request, code: str, state: str):
+    flow = Flow.from_client_config(
+        get_client_config(),
+        scopes=SCOPES,
+        redirect_uri=REDIRECT_URI,
+        state=state
+    )
     flow.fetch_token(code=code)
     creds = flow.credentials
     with open(TOKEN_PATH, 'wb') as f:
