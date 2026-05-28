@@ -1,20 +1,16 @@
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, RedirectResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request as GoogleRequest
-import google_auth_oauthlib.flow
 import requests as http_requests
 import os
 import pickle
-import json
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
 
 SCOPES = [
     'https://www.googleapis.com/auth/youtube.readonly',
@@ -69,7 +65,7 @@ def _is_short(video):
     return mins < 2
 
 @app.get("/", response_class=HTMLResponse)
-async def home(request: Request):
+async def home():
     creds = get_credentials()
     if not creds or not creds.valid:
         return RedirectResponse("/login")
@@ -77,6 +73,7 @@ async def home(request: Request):
 
 @app.get("/login")
 async def login():
+    from urllib.parse import urlencode
     params = {
         "client_id": CLIENT_ID,
         "redirect_uri": REDIRECT_URI,
@@ -85,20 +82,17 @@ async def login():
         "access_type": "offline",
         "prompt": "select_account consent"
     }
-    from urllib.parse import urlencode
-    auth_url = "https://accounts.google.com/o/oauth2/auth?" + urlencode(params)
-    return RedirectResponse(auth_url)
+    return RedirectResponse("https://accounts.google.com/o/oauth2/auth?" + urlencode(params))
 
 @app.get("/callback")
 async def callback(code: str):
-    token_data = {
+    response = http_requests.post("https://oauth2.googleapis.com/token", data={
         "code": code,
         "client_id": CLIENT_ID,
         "client_secret": CLIENT_SECRET,
         "redirect_uri": REDIRECT_URI,
         "grant_type": "authorization_code"
-    }
-    response = http_requests.post("https://oauth2.googleapis.com/token", data=token_data)
+    })
     tokens = response.json()
     creds = Credentials(
         token=tokens["access_token"],
@@ -113,8 +107,9 @@ async def callback(code: str):
     return RedirectResponse("/dashboard")
 
 @app.get("/dashboard", response_class=HTMLResponse)
-async def dashboard(request: Request):
-    return templates.TemplateResponse("dashboard.html", {"request": request})
+async def dashboard():
+    with open("templates/dashboard.html", "r") as f:
+        return HTMLResponse(content=f.read())
 
 @app.get("/api/youtube/overview")
 async def youtube_overview():
