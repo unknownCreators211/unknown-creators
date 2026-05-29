@@ -215,3 +215,49 @@ async def upload_times(filter: str = "all"):
         }
     except Exception as e:
         return {"error": str(e)}
+
+@app.get("/api/youtube/upload-times-v2")
+async def upload_times_v2(filter: str = "all"):
+    try:
+        yt = get_youtube()
+        from datetime import datetime
+        ids = [i['id']['videoId'] for i in yt.search().list(part="id", forMine=True, type="video", order="date", maxResults=50).execute()['items']]
+        videos = yt.videos().list(part="snippet,statistics,contentDetails", id=",".join(ids)).execute()['items']
+        if filter == "short": videos = [v for v in videos if _is_short(v)]
+        elif filter == "long": videos = [v for v in videos if not _is_short(v)]
+        days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+        day_data = {d: {'views':0,'count':0} for d in days}
+        hour_data = {h: {'views':0,'count':0} for h in range(24)}
+        day_hour_data = {d: {h: {'views':0,'count':0} for h in range(24)} for d in days}
+        for v in videos:
+            dt = datetime.strptime(v['snippet']['publishedAt'], '%Y-%m-%dT%H:%M:%SZ')
+            views = int(v['statistics'].get('viewCount',0))
+            day = days[dt.weekday()]
+            hour = dt.hour
+            day_data[day]['views'] += views
+            day_data[day]['count'] += 1
+            hour_data[hour]['views'] += views
+            hour_data[hour]['count'] += 1
+            day_hour_data[day][hour]['views'] += views
+            day_hour_data[day][hour]['count'] += 1
+        best_day = max(day_data, key=lambda d: day_data[d]['views'])
+        best_hour = max(hour_data, key=lambda h: hour_data[h]['views'])
+        am_pm = "AM" if best_hour < 12 else "PM"
+        best_times = {}
+        for day in days:
+            day_hours = day_hour_data[day]
+            if any(day_hours[h]['count'] > 0 for h in range(24)):
+                bh = max(day_hours, key=lambda h: day_hours[h]['views'])
+                bh_am = "AM" if bh < 12 else "PM"
+                best_times[day] = f"{bh%12 or 12}:00 {bh_am}"
+            else:
+                best_times[day] = "No data"
+        return {
+            "days": [{"day":d,"views":day_data[d]['views'],"count":day_data[d]['count'],"avg":day_data[d]['views']//day_data[d]['count'] if day_data[d]['count']>0 else 0} for d in days],
+            "best_day": best_day,
+            "best_time": f"{best_hour%12 or 12}:00 {am_pm}",
+            "best_times": best_times,
+            "total_analyzed": len(videos)
+        }
+    except Exception as e:
+        return {"error": str(e)}

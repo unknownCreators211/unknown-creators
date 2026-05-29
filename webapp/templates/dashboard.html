@@ -12,164 +12,139 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg: #050508;
-  --bg2: #0a0a0f;
-  --bg3: #0f0f18;
+  --bg: #000000;
+  --bg2: #050505;
+  --bg3: #0a0a0a;
   --cyan: #00f5ff;
-  --pink: #ff006e;
-  --yellow: #ffe600;
-  --purple: #bf00ff;
   --white: #ffffff;
   --dim: rgba(255,255,255,0.4);
+  --border: rgba(255,255,255,0.06);
 }
 
 body {
   font-family: 'Space Grotesk', sans-serif;
-  background: var(--bg);
+  background: #000000;
   color: var(--white);
   display: flex;
   min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* Animated background */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: 
-    radial-gradient(ellipse at 20% 50%, rgba(0,245,255,0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(191,0,255,0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 80%, rgba(255,0,110,0.02) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 /* Sidebar */
 .sidebar {
-  width: 240px;
+  width: 220px;
   min-height: 100vh;
-  background: rgba(10,10,15,0.95);
-  border-right: 1px solid rgba(0,245,255,0.1);
+  background: #000000;
+  border-right: 1px solid rgba(0,245,255,0.08);
   position: fixed;
   top: 0; left: 0;
   display: flex;
   flex-direction: column;
-  padding: 0;
   z-index: 100;
-  backdrop-filter: blur(20px);
 }
 
 .logo {
-  padding: 28px 24px;
+  padding: 28px 24px 24px;
   border-bottom: 1px solid rgba(0,245,255,0.08);
 }
 
 .logo-text {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.5px;
   color: var(--white);
-  text-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(0,245,255,0.3);
+  text-shadow: 0 0 30px rgba(255,255,255,0.4), 0 0 60px rgba(0,245,255,0.15);
   line-height: 1.2;
 }
 
 .logo-sub {
-  font-size: 11px;
+  font-size: 9px;
   color: var(--cyan);
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  margin-top: 4px;
-  text-shadow: 0 0 10px rgba(0,245,255,0.8);
+  margin-top: 5px;
+  text-shadow: 0 0 12px rgba(0,245,255,0.9);
 }
 
-.nav { padding: 16px 0; flex: 1; }
+.nav { padding: 12px 0; flex: 1; }
 
 .nav-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 24px;
+  gap: 10px;
+  padding: 11px 24px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s;
   border-left: 2px solid transparent;
-  color: rgba(255,255,255,0.4);
-  font-size: 14px;
+  color: rgba(255,255,255,0.3);
+  font-size: 13px;
   font-weight: 500;
-  position: relative;
 }
 
-.nav-item:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.03); }
+.nav-item:hover { color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.02); }
 
 .nav-item.active {
   color: var(--cyan);
   border-left: 2px solid var(--cyan);
-  background: rgba(0,245,255,0.05);
-  text-shadow: 0 0 10px rgba(0,245,255,0.6);
+  background: rgba(0,245,255,0.04);
+  text-shadow: 0 0 12px rgba(0,245,255,0.5);
 }
-
-.nav-item .nav-icon { font-size: 16px; width: 20px; text-align: center; }
 
 .badge {
   margin-left: auto;
-  font-size: 9px;
-  padding: 2px 6px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 1px;
+  font-size: 8px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
 /* Main */
 .main {
-  margin-left: 240px;
+  margin-left: 220px;
   flex: 1;
-  padding: 32px;
-  position: relative;
-  z-index: 1;
+  padding: 28px 32px;
 }
 
-/* Topbar */
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .page-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--white);
-  text-shadow: 0 0 30px rgba(255,255,255,0.3);
+  text-shadow: 0 0 30px rgba(255,255,255,0.2);
 }
 
 .page-title span {
   color: var(--cyan);
-  text-shadow: 0 0 20px rgba(0,245,255,0.8), 0 0 40px rgba(0,245,255,0.4);
+  text-shadow: 0 0 20px rgba(0,245,255,0.7), 0 0 40px rgba(0,245,255,0.3);
 }
 
-.topbar-right {
+.live-badge {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--cyan);
+  text-shadow: 0 0 8px rgba(0,245,255,0.7);
+  letter-spacing: 2px;
 }
 
-.status-dot {
-  width: 8px; height: 8px;
+.live-dot {
+  width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--cyan);
-  box-shadow: 0 0 8px var(--cyan), 0 0 16px var(--cyan);
-  animation: pulse 2s infinite;
+  box-shadow: 0 0 8px var(--cyan);
+  animation: blink 2s infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-.status-text { font-size: 12px; color: var(--cyan); text-shadow: 0 0 10px rgba(0,245,255,0.6); }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
 /* Pages */
 .page { display: none; }
@@ -178,30 +153,30 @@ body::before {
 /* Tabs */
 .tabs {
   display: flex;
-  gap: 4px;
-  margin-bottom: 28px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding-bottom: 0;
+  gap: 0;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .tab {
-  padding: 10px 20px;
-  font-size: 13px;
+  padding: 10px 18px;
+  font-size: 12px;
   font-weight: 600;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.3);
   cursor: pointer;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
-  transition: all 0.2s;
-  letter-spacing: 0.3px;
+  transition: all 0.15s;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.tab:hover { color: rgba(255,255,255,0.7); }
+.tab:hover { color: rgba(255,255,255,0.6); }
 
 .tab.active {
   color: var(--cyan);
   border-bottom: 2px solid var(--cyan);
-  text-shadow: 0 0 10px rgba(0,245,255,0.6);
+  text-shadow: 0 0 10px rgba(0,245,255,0.5);
 }
 
 .tab-content { display: none; }
@@ -210,37 +185,27 @@ body::before {
 /* Stats grid */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-  margin-bottom: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .stat-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s;
+  background: #050505;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 18px 16px;
+  transition: all 0.2s;
 }
 
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0,245,255,0.4), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
+.stat-card:hover {
+  border-color: rgba(0,245,255,0.12);
+  background: rgba(0,245,255,0.02);
 }
-
-.stat-card:hover::before { opacity: 1; }
-.stat-card:hover { border-color: rgba(0,245,255,0.15); background: rgba(0,245,255,0.03); }
 
 .stat-label {
-  font-size: 10px;
-  color: rgba(255,255,255,0.35);
+  font-size: 9px;
+  color: rgba(255,255,255,0.3);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 10px;
@@ -248,83 +213,69 @@ body::before {
 }
 
 .stat-value {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--white);
-  text-shadow: 0 0 20px rgba(255,255,255,0.3);
+  text-shadow: 0 0 20px rgba(255,255,255,0.15);
   font-family: 'Inter', sans-serif;
   line-height: 1;
 }
 
-.stat-value.cyan { color: var(--cyan); text-shadow: 0 0 20px rgba(0,245,255,0.6); }
-.stat-value.pink { color: var(--pink); text-shadow: 0 0 20px rgba(255,0,110,0.6); }
-.stat-value.yellow { color: var(--yellow); text-shadow: 0 0 20px rgba(255,230,0,0.6); }
-.stat-value.purple { color: var(--purple); text-shadow: 0 0 20px rgba(191,0,255,0.6); }
-
-.stat-sub {
-  font-size: 11px;
-  color: rgba(255,255,255,0.25);
-  margin-top: 6px;
+.stat-value.cyan {
+  color: var(--cyan);
+  text-shadow: 0 0 20px rgba(0,245,255,0.5);
 }
 
-/* Counter animation */
-.count-up { transition: all 0.5s; }
+.stat-sub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+  margin-top: 5px;
+}
 
-/* Chart cards */
+/* Chart section */
 .chart-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 20px;
 }
 
 .chart-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-.chart-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(191,0,255,0.3), transparent);
+  background: #050505;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 22px;
 }
 
 .chart-title {
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 600;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.3);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
 }
 
 /* Video grid */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
 }
 
 .video-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
+  background: #050505;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s;
-  position: relative;
+  transition: all 0.2s;
 }
 
 .video-card:hover {
-  border-color: rgba(0,245,255,0.2);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(0,245,255,0.1);
+  border-color: rgba(0,245,255,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,245,255,0.06);
 }
 
 .video-card img {
@@ -334,13 +285,13 @@ body::before {
   display: block;
 }
 
-.video-info { padding: 12px; }
+.video-info { padding: 10px; }
 
 .video-title {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  color: rgba(255,255,255,0.8);
-  margin-bottom: 8px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 7px;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -355,129 +306,184 @@ body::before {
 }
 
 .meta-item {
-  font-size: 11px;
-  color: rgba(255,255,255,0.35);
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
   display: flex;
   align-items: center;
   gap: 3px;
 }
 
-.meta-item.views { color: var(--cyan); text-shadow: 0 0 8px rgba(0,245,255,0.4); }
-.meta-item.likes { color: var(--pink); text-shadow: 0 0 8px rgba(255,0,110,0.4); }
-.meta-item.engagement { color: var(--yellow); text-shadow: 0 0 8px rgba(255,230,0,0.4); }
+.meta-item.cyan { color: var(--cyan); text-shadow: 0 0 6px rgba(0,245,255,0.4); }
 
 /* Filter bar */
 .filter-bar {
   display: flex;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .filter-btn {
-  padding: 7px 16px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.1);
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
   background: transparent;
-  color: rgba(255,255,255,0.4);
-  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s;
   font-family: 'Space Grotesk', sans-serif;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.filter-btn:hover { border-color: rgba(0,245,255,0.3); color: var(--cyan); }
+.filter-btn:hover { border-color: rgba(0,245,255,0.2); color: rgba(255,255,255,0.7); }
 
 .filter-btn.active {
-  background: rgba(0,245,255,0.1);
-  border-color: var(--cyan);
+  background: rgba(0,245,255,0.08);
+  border-color: rgba(0,245,255,0.3);
   color: var(--cyan);
-  text-shadow: 0 0 8px rgba(0,245,255,0.6);
-  box-shadow: 0 0 12px rgba(0,245,255,0.1);
+  text-shadow: 0 0 8px rgba(0,245,255,0.5);
+}
+
+.apply-btn {
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,245,255,0.3);
+  background: rgba(0,245,255,0.08);
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0,245,255,0.5);
+  transition: all 0.15s;
+}
+
+.apply-btn:hover { background: rgba(0,245,255,0.15); }
+
+/* Calendar date picker */
+.date-picker-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .date-input {
-  padding: 7px 12px;
-  border-radius: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
   border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.03);
+  background: #050505;
   color: rgba(255,255,255,0.6);
-  font-size: 12px;
+  font-size: 11px;
   font-family: 'Space Grotesk', sans-serif;
-}
-
-.date-input:focus { outline: none; border-color: rgba(0,245,255,0.3); }
-
-.apply-btn {
-  padding: 7px 16px;
-  border-radius: 8px;
-  border: 1px solid var(--cyan);
-  background: rgba(0,245,255,0.1);
-  color: var(--cyan);
-  font-size: 12px;
-  font-weight: 600;
   cursor: pointer;
-  font-family: 'Space Grotesk', sans-serif;
-  text-shadow: 0 0 8px rgba(0,245,255,0.6);
-  transition: all 0.2s;
+  color-scheme: dark;
 }
 
-.apply-btn:hover { background: rgba(0,245,255,0.2); box-shadow: 0 0 16px rgba(0,245,255,0.2); }
+.date-input:focus { outline: none; border-color: rgba(0,245,255,0.25); }
 
-/* Upload time */
+.date-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Upload time table */
+.upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
 .day-table { width: 100%; border-collapse: collapse; }
 
 .day-table th {
   text-align: left;
-  padding: 10px 14px;
-  font-size: 10px;
-  color: rgba(255,255,255,0.3);
+  padding: 8px 12px;
+  font-size: 9px;
+  color: rgba(255,255,255,0.25);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
 .day-table td {
-  padding: 12px 14px;
-  font-size: 13px;
+  padding: 11px 12px;
+  font-size: 12px;
   border-bottom: 1px solid rgba(255,255,255,0.03);
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.5);
 }
 
 .day-table tr.best td {
   color: var(--cyan);
-  text-shadow: 0 0 8px rgba(0,245,255,0.4);
+  text-shadow: 0 0 8px rgba(0,245,255,0.3);
 }
 
-.bar-wrap { display: flex; align-items: center; gap: 8px; }
+.bar-wrap { display: flex; align-items: center; gap: 6px; }
 
 .bar {
-  height: 4px;
-  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  height: 3px;
+  background: var(--cyan);
   border-radius: 2px;
-  min-width: 4px;
-  box-shadow: 0 0 8px rgba(0,245,255,0.4);
+  box-shadow: 0 0 6px rgba(0,245,255,0.5);
+  min-width: 3px;
 }
 
-/* Best time badge */
-.best-badge {
-  display: inline-flex;
-  align-items: center;
+/* Best time per day */
+.best-times-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 10px;
-  background: rgba(0,245,255,0.08);
-  border: 1px solid rgba(0,245,255,0.2);
+  margin-top: 16px;
+}
+
+.best-time-card {
+  background: #050505;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+
+.best-time-card.top {
+  border-color: rgba(0,245,255,0.2);
+  background: rgba(0,245,255,0.03);
+}
+
+.best-time-day {
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.best-time-card.top .best-time-day { color: var(--cyan); text-shadow: 0 0 8px rgba(0,245,255,0.5); }
+
+.best-time-val {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 0 0 15px rgba(255,255,255,0.2);
+  font-family: 'Inter', sans-serif;
+}
+
+.best-time-card.top .best-time-val {
   color: var(--cyan);
-  padding: 12px 20px;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: 20px;
-  text-shadow: 0 0 10px rgba(0,245,255,0.6);
-  box-shadow: 0 0 20px rgba(0,245,255,0.08);
+  text-shadow: 0 0 15px rgba(0,245,255,0.6);
+}
+
+.best-time-views {
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+  margin-top: 4px;
 }
 
 /* Loading */
@@ -486,18 +492,17 @@ body::before {
   align-items: center;
   justify-content: center;
   padding: 80px;
-  color: rgba(255,255,255,0.3);
-  font-size: 14px;
-  gap: 12px;
+  color: rgba(255,255,255,0.2);
+  font-size: 13px;
+  gap: 10px;
 }
 
 .spinner {
-  width: 20px; height: 20px;
-  border: 2px solid rgba(0,245,255,0.1);
+  width: 18px; height: 18px;
+  border: 1px solid rgba(0,245,255,0.1);
   border-top-color: var(--cyan);
   border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  box-shadow: 0 0 8px rgba(0,245,255,0.3);
+  animation: spin 0.7s linear infinite;
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -509,40 +514,33 @@ body::before {
   align-items: center;
   justify-content: center;
   height: 60vh;
-  gap: 16px;
-}
-
-.coming-soon-icon {
-  font-size: 48px;
-  filter: drop-shadow(0 0 20px rgba(0,245,255,0.5));
+  gap: 14px;
 }
 
 .coming-soon-page h2 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--white);
-  text-shadow: 0 0 20px rgba(255,255,255,0.3);
+  text-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
-.coming-soon-page p {
-  font-size: 14px;
-  color: rgba(255,255,255,0.3);
-}
+.coming-soon-page p { font-size: 13px; color: rgba(255,255,255,0.25); }
 
 .coming-soon-page .eta {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--cyan);
   text-shadow: 0 0 8px rgba(0,245,255,0.6);
-  background: rgba(0,245,255,0.06);
-  border: 1px solid rgba(0,245,255,0.15);
-  padding: 6px 14px;
+  background: rgba(0,245,255,0.05);
+  border: 1px solid rgba(0,245,255,0.12);
+  padding: 5px 14px;
   border-radius: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(0,245,255,0.2); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: rgba(0,245,255,0.15); border-radius: 2px; }
 </style>
 </head>
 <body>
@@ -553,43 +551,22 @@ body::before {
     <div class="logo-sub">Analytics</div>
   </div>
   <nav class="nav">
-    <div class="nav-item active" onclick="showPage('youtube', this)">
-      <span class="nav-icon">▶</span> YouTube
-    </div>
-    <div class="nav-item" onclick="showPage('tiktok', this)">
-      <span class="nav-icon">♪</span> TikTok <span class="badge">Soon</span>
-    </div>
-    <div class="nav-item" onclick="showPage('instagram', this)">
-      <span class="nav-icon">◈</span> Instagram <span class="badge">Soon</span>
-    </div>
-    <div class="nav-item" onclick="showPage('twitch', this)">
-      <span class="nav-icon">◉</span> Twitch <span class="badge">Soon</span>
-    </div>
-    <div class="nav-item" onclick="showPage('spotify', this)">
-      <span class="nav-icon">●</span> Spotify <span class="badge">Soon</span>
-    </div>
-    <div class="nav-item" onclick="showPage('soundcloud', this)">
-      <span class="nav-icon">◎</span> SoundCloud <span class="badge">Soon</span>
-    </div>
-    <div class="nav-item" onclick="showPage('twitter', this)">
-      <span class="nav-icon">✕</span> Twitter/X <span class="badge">Soon</span>
-    </div>
-    <div class="nav-item" onclick="showPage('reddit', this)">
-      <span class="nav-icon">◆</span> Reddit <span class="badge">Soon</span>
-    </div>
-    <div class="nav-item" onclick="showPage('trends', this)">
-      <span class="nav-icon">↑</span> Trends <span class="badge">Soon</span>
-    </div>
+    <div class="nav-item active" onclick="showPage('youtube',this)">▶ YouTube</div>
+    <div class="nav-item" onclick="showPage('tiktok',this)">♪ TikTok <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('instagram',this)">◈ Instagram <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('twitch',this)">◉ Twitch <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('spotify',this)">● Spotify <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('soundcloud',this)">◎ SoundCloud <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('twitter',this)">✕ Twitter/X <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('reddit',this)">◆ Reddit <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('trends',this)">↑ Trends <span class="badge">Soon</span></div>
   </nav>
 </div>
 
 <div class="main">
   <div class="topbar">
     <div class="page-title" id="page-title">YouTube <span>Analytics</span></div>
-    <div class="topbar-right">
-      <div class="status-dot"></div>
-      <div class="status-text">LIVE</div>
-    </div>
+    <div class="live-badge"><div class="live-dot"></div>LIVE</div>
   </div>
 
   <!-- YOUTUBE -->
@@ -602,25 +579,23 @@ body::before {
       <div class="tab" onclick="showTab('yt','worst',this)">Worst Videos</div>
     </div>
 
-    <!-- Overview -->
     <div class="tab-content active" id="yt-overview">
-      <div class="loading" id="overview-loading"><div class="spinner"></div> Loading channel data...</div>
+      <div class="loading" id="overview-loading"><div class="spinner"></div> Loading...</div>
       <div id="overview-content" style="display:none">
         <div class="stats-grid" id="stats-grid"></div>
         <div class="chart-row">
           <div class="chart-card">
-            <div class="chart-title">Subscriber Growth</div>
-            <canvas id="subGrowthChart" height="140"></canvas>
+            <div class="chart-title">Subscriber Growth Over Time</div>
+            <canvas id="subGrowthChart" height="130"></canvas>
           </div>
           <div class="chart-card">
-            <div class="chart-title">Channel Health Score</div>
-            <canvas id="healthChart" height="140"></canvas>
+            <div class="chart-title">Views Over Time</div>
+            <canvas id="viewsChart" height="130"></canvas>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Top Videos -->
     <div class="tab-content" id="yt-videos">
       <div class="filter-bar">
         <button class="filter-btn active" onclick="loadTopVideos('all',this)">All</button>
@@ -628,16 +603,17 @@ body::before {
         <button class="filter-btn" onclick="loadTopVideos('short',this)">Shorts</button>
       </div>
       <div class="loading" id="videos-loading"><div class="spinner"></div> Loading...</div>
-      <div id="videos-content" style="display:none">
-        <div class="video-grid" id="video-grid"></div>
-      </div>
+      <div id="videos-content" style="display:none"><div class="video-grid" id="video-grid"></div></div>
     </div>
 
-    <!-- Analytics -->
     <div class="tab-content" id="yt-analytics">
       <div class="filter-bar">
-        <input type="date" class="date-input" id="start-date">
-        <input type="date" class="date-input" id="end-date">
+        <div class="date-picker-wrap">
+          <span class="date-label">From</span>
+          <input type="date" class="date-input" id="start-date">
+          <span class="date-label">To</span>
+          <input type="date" class="date-input" id="end-date">
+        </div>
         <button class="filter-btn active" onclick="toggleMetric(this,'views')">Views</button>
         <button class="filter-btn" onclick="toggleMetric(this,'watch_time')">Watch Time</button>
         <button class="filter-btn" onclick="toggleMetric(this,'subs')">Subscribers</button>
@@ -646,13 +622,12 @@ body::before {
       <div class="loading" id="analytics-loading" style="display:none"><div class="spinner"></div> Loading...</div>
       <div id="analytics-content">
         <div class="chart-card">
-          <div class="chart-title" id="analytics-chart-title">Views Over Time</div>
-          <canvas id="analyticsChart" height="100"></canvas>
+          <div class="chart-title">Performance Over Time</div>
+          <canvas id="analyticsChart" height="120"></canvas>
         </div>
       </div>
     </div>
 
-    <!-- Upload Time -->
     <div class="tab-content" id="yt-uploadtime">
       <div class="filter-bar">
         <button class="filter-btn active" onclick="loadUploadTime('all',this)">All</button>
@@ -661,21 +636,23 @@ body::before {
       </div>
       <div class="loading" id="uploadtime-loading"><div class="spinner"></div> Analyzing...</div>
       <div id="uploadtime-content" style="display:none">
-        <div class="chart-row">
+        <div class="upload-grid">
           <div class="chart-card">
             <div class="chart-title">Avg Views by Upload Day</div>
-            <canvas id="uploadDayChart" height="160"></canvas>
+            <canvas id="uploadDayChart" height="180"></canvas>
           </div>
           <div class="chart-card">
             <div class="chart-title">Day Breakdown</div>
             <table class="day-table" id="day-table"></table>
           </div>
         </div>
-        <div id="best-time-badge"></div>
+        <div class="chart-card" style="margin-top:14px">
+          <div class="chart-title">Best Upload Time Per Day</div>
+          <div class="best-times-grid" id="best-times-grid"></div>
+        </div>
       </div>
     </div>
 
-    <!-- Worst Videos -->
     <div class="tab-content" id="yt-worst">
       <div class="filter-bar">
         <button class="filter-btn active" onclick="loadWorstVideos('all',this)">All</button>
@@ -683,205 +660,139 @@ body::before {
         <button class="filter-btn" onclick="loadWorstVideos('short',this)">Shorts</button>
       </div>
       <div class="loading" id="worst-loading"><div class="spinner"></div> Loading...</div>
-      <div id="worst-content" style="display:none">
-        <div class="video-grid" id="worst-grid"></div>
-      </div>
+      <div id="worst-content" style="display:none"><div class="video-grid" id="worst-grid"></div></div>
     </div>
   </div>
 
   <!-- OTHER PLATFORMS -->
-  <div class="page" id="page-tiktok">
-    <div class="coming-soon-page">
-      <div class="coming-soon-icon">♪</div>
-      <h2>TikTok Analytics</h2>
-      <p>TikTok Research API integration coming soon</p>
-      <div class="eta">In Development</div>
-    </div>
-  </div>
-  <div class="page" id="page-instagram">
-    <div class="coming-soon-page">
-      <div class="coming-soon-icon">◈</div>
-      <h2>Instagram Analytics</h2>
-      <p>Instagram Graph API integration coming soon</p>
-      <div class="eta">In Development</div>
-    </div>
-  </div>
-  <div class="page" id="page-twitch">
-    <div class="coming-soon-page">
-      <div class="coming-soon-icon">◉</div>
-      <h2>Twitch Analytics</h2>
-      <p>Twitch API integration coming soon</p>
-      <div class="eta">In Development</div>
-    </div>
-  </div>
-  <div class="page" id="page-spotify">
-    <div class="coming-soon-page">
-      <div class="coming-soon-icon">●</div>
-      <h2>Spotify Analytics</h2>
-      <p>Spotify API integration coming soon</p>
-      <div class="eta">In Development</div>
-    </div>
-  </div>
-  <div class="page" id="page-soundcloud">
-    <div class="coming-soon-page">
-      <div class="coming-soon-icon">◎</div>
-      <h2>SoundCloud Analytics</h2>
-      <p>SoundCloud integration coming soon</p>
-      <div class="eta">In Development</div>
-    </div>
-  </div>
-  <div class="page" id="page-twitter">
-    <div class="coming-soon-page">
-      <div class="coming-soon-icon">✕</div>
-      <h2>Twitter/X Analytics</h2>
-      <p>Twitter API integration coming soon</p>
-      <div class="eta">In Development</div>
-    </div>
-  </div>
-  <div class="page" id="page-reddit">
-    <div class="coming-soon-page">
-      <div class="coming-soon-icon">◆</div>
-      <h2>Reddit Analytics</h2>
-      <p>Reddit API integration coming soon</p>
-      <div class="eta">In Development</div>
-    </div>
-  </div>
-  <div class="page" id="page-trends">
-    <div class="coming-soon-page">
-      <div class="coming-soon-icon">↑</div>
-      <h2>Trending Topics</h2>
-      <p>Google Trends integration coming soon</p>
-      <div class="eta">In Development</div>
-    </div>
-  </div>
+  <div class="page" id="page-tiktok"><div class="coming-soon-page"><h2>TikTok Analytics</h2><p>TikTok Research API coming soon</p><div class="eta">In Development</div></div></div>
+  <div class="page" id="page-instagram"><div class="coming-soon-page"><h2>Instagram Analytics</h2><p>Instagram Graph API coming soon</p><div class="eta">In Development</div></div></div>
+  <div class="page" id="page-twitch"><div class="coming-soon-page"><h2>Twitch Analytics</h2><p>Twitch API coming soon</p><div class="eta">In Development</div></div></div>
+  <div class="page" id="page-spotify"><div class="coming-soon-page"><h2>Spotify Analytics</h2><p>Spotify API coming soon</p><div class="eta">In Development</div></div></div>
+  <div class="page" id="page-soundcloud"><div class="coming-soon-page"><h2>SoundCloud Analytics</h2><p>SoundCloud coming soon</p><div class="eta">In Development</div></div></div>
+  <div class="page" id="page-twitter"><div class="coming-soon-page"><h2>Twitter/X Analytics</h2><p>Twitter API coming soon</p><div class="eta">In Development</div></div></div>
+  <div class="page" id="page-reddit"><div class="coming-soon-page"><h2>Reddit Analytics</h2><p>Reddit API coming soon</p><div class="eta">In Development</div></div></div>
+  <div class="page" id="page-trends"><div class="coming-soon-page"><h2>Trending Topics</h2><p>Google Trends coming soon</p><div class="eta">In Development</div></div></div>
 </div>
 
 <script>
-Chart.defaults.color = 'rgba(255,255,255,0.4)';
-Chart.defaults.borderColor = 'rgba(255,255,255,0.05)';
+Chart.defaults.color = 'rgba(255,255,255,0.3)';
+Chart.defaults.borderColor = 'rgba(255,255,255,0.04)';
 
-let analyticsChart = null, subGrowthChart = null, uploadDayChart = null;
-let activeMetrics = ['views'];
+let analyticsChart=null, subGrowthChart=null, viewsChart=null, uploadDayChart=null;
+let activeMetrics=['views'];
 
 const today = new Date();
 const threeMonthsAgo = new Date(today);
-threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+threeMonthsAgo.setMonth(threeMonthsAgo.getMonth()-3);
 document.getElementById('start-date').value = threeMonthsAgo.toISOString().split('T')[0];
 document.getElementById('end-date').value = today.toISOString().split('T')[0];
 
-function countUp(el, target, duration=1000) {
-  const start = 0;
-  const startTime = performance.now();
-  const isFloat = target.toString().includes('.');
-  function update(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = start + (parseFloat(target) - start) * eased;
-    el.textContent = isFloat ? current.toFixed(1) : Math.floor(current).toLocaleString();
-    if (progress < 1) requestAnimationFrame(update);
-    else el.textContent = target;
-  }
-  requestAnimationFrame(update);
-}
-
 function showPage(name, el) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
   el.classList.add('active');
-  const titles = {youtube:'YouTube <span>Analytics</span>',tiktok:'TikTok <span>Analytics</span>',instagram:'Instagram <span>Analytics</span>',twitch:'Twitch <span>Analytics</span>',spotify:'Spotify <span>Analytics</span>',soundcloud:'SoundCloud <span>Analytics</span>',twitter:'Twitter/X <span>Analytics</span>',reddit:'Reddit <span>Analytics</span>',trends:'Trending <span>Topics</span>'};
-  document.getElementById('page-title').innerHTML = titles[name] || name;
+  const titles={youtube:'YouTube <span>Analytics</span>',tiktok:'TikTok <span>Analytics</span>',instagram:'Instagram <span>Analytics</span>',twitch:'Twitch <span>Analytics</span>',spotify:'Spotify <span>Analytics</span>',soundcloud:'SoundCloud <span>Analytics</span>',twitter:'Twitter/X <span>Analytics</span>',reddit:'Reddit <span>Analytics</span>',trends:'Trending <span>Topics</span>'};
+  document.getElementById('page-title').innerHTML = titles[name]||name;
 }
 
 function showTab(page, tab, el) {
-  document.querySelectorAll(`#page-${page} .tab`).forEach(t => t.classList.remove('active'));
-  document.querySelectorAll(`#page-${page} .tab-content`).forEach(t => t.classList.remove('active'));
+  document.querySelectorAll(`#page-${page} .tab`).forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll(`#page-${page} .tab-content`).forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
   document.getElementById(`${page}-${tab}`).classList.add('active');
-  if (page==='yt' && tab==='videos') loadTopVideos('all');
-  if (page==='yt' && tab==='uploadtime') loadUploadTime('all');
-  if (page==='yt' && tab==='worst') loadWorstVideos('all');
-  if (page==='yt' && tab==='analytics') loadAnalytics();
+  if(page==='yt'&&tab==='videos') loadTopVideos('all');
+  if(page==='yt'&&tab==='uploadtime') loadUploadTime('all');
+  if(page==='yt'&&tab==='worst') loadWorstVideos('all');
+  if(page==='yt'&&tab==='analytics') loadAnalytics();
 }
 
 function toggleMetric(btn, metric) {
   btn.classList.toggle('active');
-  if (activeMetrics.includes(metric)) activeMetrics = activeMetrics.filter(m => m !== metric);
+  if(activeMetrics.includes(metric)) activeMetrics=activeMetrics.filter(m=>m!==metric);
   else activeMetrics.push(metric);
 }
 
 async function loadOverview() {
   const res = await fetch('/api/youtube/overview');
   const data = await res.json();
-  if (data.error) { document.getElementById('overview-loading').innerHTML = `<span style="color:var(--pink)">Error: ${data.error}</span>`; return; }
-  document.getElementById('overview-loading').style.display = 'none';
-  document.getElementById('overview-content').style.display = 'block';
+  if(data.error){document.getElementById('overview-loading').innerHTML=`<span style="color:rgba(255,0,110,0.8)">Error loading data</span>`;return;}
+  document.getElementById('overview-loading').style.display='none';
+  document.getElementById('overview-content').style.display='block';
 
-  const colorMap = ['','cyan','','','cyan','purple','yellow','pink','pink','cyan','pink','yellow'];
-  const stats = [
-    {label:'Channel', value: data.channel_name, sub:'', raw: null},
-    {label:'Subscribers', value: data.subscribers, sub:'', raw: null, color:'cyan'},
-    {label:'Total Views', value: data.total_views, sub:'', raw: null},
-    {label:'Total Videos', value: data.total_videos, sub:'', raw: null},
-    {label:'Watch Time', value: data.watch_time + ' mins', sub:'', raw: null, color:'cyan'},
-    {label:'Avg Duration', value: data.avg_duration, sub:'', raw: null, color:'purple'},
-    {label:'Avg Views/Video', value: data.avg_views, sub:'', raw: null, color:'yellow'},
-    {label:'Subs Gained', value: data.subs_gained, sub:'All time', raw: null, color:'cyan'},
-    {label:'Subs Lost', value: data.subs_lost, sub:'All time', raw: null, color:'pink'},
-    {label:'Net Subs', value: data.net_subs, sub:'', raw: null, color:'cyan'},
-    {label:'Revenue Potential', value: data.revenue_potential, sub:'If monetized', raw: null, color:'pink'},
-    {label:'Channel Stage', value: data.stage, sub:'', raw: null, color:'yellow'},
+  const stats=[
+    {label:'Channel',value:data.channel_name,cyan:false},
+    {label:'Subscribers',value:data.subscribers,cyan:true},
+    {label:'Total Views',value:data.total_views,cyan:false},
+    {label:'Total Videos',value:data.total_videos,cyan:false},
+    {label:'Watch Time',value:data.watch_time+' mins',cyan:true},
+    {label:'Avg Duration',value:data.avg_duration,cyan:false},
+    {label:'Avg Views/Video',value:data.avg_views,cyan:false},
+    {label:'Subs Gained',value:data.subs_gained,sub:'All time',cyan:true},
+    {label:'Subs Lost',value:data.subs_lost,sub:'All time',cyan:false},
+    {label:'Net Subs',value:data.net_subs,cyan:true},
+    {label:'Revenue Potential',value:data.revenue_potential,sub:'If monetized',cyan:false},
+    {label:'Channel Stage',value:data.stage,cyan:false},
   ];
 
-  document.getElementById('stats-grid').innerHTML = stats.map(s => `
+  document.getElementById('stats-grid').innerHTML = stats.map(s=>`
     <div class="stat-card">
       <div class="stat-label">${s.label}</div>
-      <div class="stat-value ${s.color||''}">${s.value}</div>
-      ${s.sub ? `<div class="stat-sub">${s.sub}</div>` : ''}
+      <div class="stat-value ${s.cyan?'cyan':''}">${s.value}</div>
+      ${s.sub?`<div class="stat-sub">${s.sub}</div>`:''}
     </div>
   `).join('');
 
-  // Sub growth chart
-  const growthRes = await fetch(`/api/youtube/analytics?start=2000-01-01&end=${today.toISOString().split('T')[0]}&metrics=subscribersGained`);
+  const todayStr = today.toISOString().split('T')[0];
+
+  // Subscriber growth chart
+  const growthRes = await fetch(`/api/youtube/analytics?start=2000-01-01&end=${todayStr}&metrics=subscribersGained`);
   const growthData = await growthRes.json();
-  if (growthData.rows) {
-    const months = growthData.rows.map(r => r[0].substring(0,7));
-    const gains = growthData.rows.map(r => parseInt(r[1]));
-    if (subGrowthChart) subGrowthChart.destroy();
-    subGrowthChart = new Chart(document.getElementById('subGrowthChart'), {
-      type: 'line',
-      data: { labels: months, datasets: [{ label: 'Subs Gained', data: gains, borderColor: '#00f5ff', backgroundColor: 'rgba(0,245,255,0.05)', tension: 0.4, fill: true, pointRadius: 2, pointBackgroundColor: '#00f5ff' }] },
-      options: { plugins: { legend: { display: false } }, scales: { x: { ticks: { maxTicksLimit: 6, color: 'rgba(255,255,255,0.3)' }, grid: { color: 'rgba(255,255,255,0.03)' } }, y: { ticks: { color: 'rgba(255,255,255,0.3)' }, grid: { color: 'rgba(255,255,255,0.03)' } } } }
+  if(growthData.rows&&growthData.rows.length) {
+    const months = growthData.rows.map(r=>r[0].substring(0,7));
+    const gains = growthData.rows.map(r=>parseInt(r[1]));
+    if(subGrowthChart) subGrowthChart.destroy();
+    subGrowthChart = new Chart(document.getElementById('subGrowthChart'),{
+      type:'line',
+      data:{labels:months,datasets:[{label:'Subs Gained',data:gains,borderColor:'#00f5ff',backgroundColor:'rgba(0,245,255,0.04)',tension:0.4,fill:true,pointRadius:2,pointBackgroundColor:'#00f5ff',borderWidth:1.5}]},
+      options:{plugins:{legend:{display:false}},scales:{x:{ticks:{maxTicksLimit:6}},y:{beginAtZero:true}}}
     });
   }
 
-  const score = data.stage === 'High' ? 85 : data.stage === 'Growing' ? 50 : 20;
-  new Chart(document.getElementById('healthChart'), {
-    type: 'doughnut',
-    data: { labels: ['Score','Remaining'], datasets: [{ data: [score, 100-score], backgroundColor: ['#00f5ff','rgba(255,255,255,0.05)'], borderWidth: 0 }] },
-    options: { plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => c.label === 'Score' ? `${data.stage} — ${score}/100` : '' } } }, cutout: '78%' }
-  });
+  // Views chart
+  const viewsRes = await fetch(`/api/youtube/analytics?start=2000-01-01&end=${todayStr}&metrics=views`);
+  const viewsData = await viewsRes.json();
+  if(viewsData.rows&&viewsData.rows.length) {
+    const months = viewsData.rows.map(r=>r[0].substring(0,7));
+    const views = viewsData.rows.map(r=>parseInt(r[1]));
+    if(viewsChart) viewsChart.destroy();
+    viewsChart = new Chart(document.getElementById('viewsChart'),{
+      type:'bar',
+      data:{labels:months,datasets:[{label:'Views',data:views,backgroundColor:'rgba(0,245,255,0.15)',borderColor:'rgba(0,245,255,0.4)',borderWidth:1,borderRadius:3}]},
+      options:{plugins:{legend:{display:false}},scales:{x:{ticks:{maxTicksLimit:6}},y:{beginAtZero:true}}}
+    });
+  }
 }
 
 async function loadTopVideos(filter, btn) {
-  if (btn) { document.querySelectorAll('#yt-videos .filter-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
-  document.getElementById('videos-loading').style.display = 'flex';
-  document.getElementById('videos-content').style.display = 'none';
-  const res = await fetch('/api/youtube/top-videos?filter=' + filter);
+  if(btn){document.querySelectorAll('#yt-videos .filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+  document.getElementById('videos-loading').style.display='flex';
+  document.getElementById('videos-content').style.display='none';
+  const res = await fetch('/api/youtube/top-videos?filter='+filter);
   const videos = await res.json();
-  document.getElementById('videos-loading').style.display = 'none';
-  document.getElementById('videos-content').style.display = 'block';
-  if (videos.error) return;
-  document.getElementById('video-grid').innerHTML = videos.map(v => `
+  document.getElementById('videos-loading').style.display='none';
+  document.getElementById('videos-content').style.display='block';
+  if(videos.error)return;
+  document.getElementById('video-grid').innerHTML = videos.map(v=>`
     <div class="video-card" onclick="window.open('${v.url}','_blank')">
       <img src="${v.thumbnail}" alt="" loading="lazy">
       <div class="video-info">
         <div class="video-title">${v.title}</div>
         <div class="video-meta">
-          <span class="meta-item views">👁 ${v.views}</span>
-          <span class="meta-item likes">♥ ${v.likes}</span>
-          <span class="meta-item engagement">◈ ${v.engagement}</span>
+          <span class="meta-item cyan">👁 ${v.views}</span>
+          <span class="meta-item">♥ ${v.likes}</span>
+          <span class="meta-item">◈ ${v.engagement}</span>
         </div>
       </div>
     </div>
@@ -889,24 +800,24 @@ async function loadTopVideos(filter, btn) {
 }
 
 async function loadWorstVideos(filter, btn) {
-  if (btn) { document.querySelectorAll('#yt-worst .filter-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
-  document.getElementById('worst-loading').style.display = 'flex';
-  document.getElementById('worst-content').style.display = 'none';
-  const res = await fetch('/api/youtube/top-videos?filter=' + filter);
+  if(btn){document.querySelectorAll('#yt-worst .filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+  document.getElementById('worst-loading').style.display='flex';
+  document.getElementById('worst-content').style.display='none';
+  const res = await fetch('/api/youtube/top-videos?filter='+filter);
   let videos = await res.json();
-  if (videos.error) return;
-  videos = videos.sort((a,b) => a.views_raw - b.views_raw);
-  document.getElementById('worst-loading').style.display = 'none';
-  document.getElementById('worst-content').style.display = 'block';
-  document.getElementById('worst-grid').innerHTML = videos.map(v => `
+  if(videos.error)return;
+  videos = videos.sort((a,b)=>a.views_raw-b.views_raw);
+  document.getElementById('worst-loading').style.display='none';
+  document.getElementById('worst-content').style.display='block';
+  document.getElementById('worst-grid').innerHTML = videos.map(v=>`
     <div class="video-card" onclick="window.open('${v.url}','_blank')">
       <img src="${v.thumbnail}" alt="" loading="lazy">
       <div class="video-info">
         <div class="video-title">${v.title}</div>
         <div class="video-meta">
-          <span class="meta-item views">👁 ${v.views}</span>
-          <span class="meta-item likes">♥ ${v.likes}</span>
-          <span class="meta-item engagement">◈ ${v.engagement}</span>
+          <span class="meta-item cyan">👁 ${v.views}</span>
+          <span class="meta-item">♥ ${v.likes}</span>
+          <span class="meta-item">◈ ${v.engagement}</span>
         </div>
       </div>
     </div>
@@ -916,66 +827,90 @@ async function loadWorstVideos(filter, btn) {
 async function loadAnalytics() {
   const start = document.getElementById('start-date').value;
   const end = document.getElementById('end-date').value;
-  if (!start || !end) return;
-  document.getElementById('analytics-loading').style.display = 'flex';
-  const metricMap = { views: 'views', watch_time: 'estimatedMinutesWatched', subs: 'subscribersGained' };
-  const metricsToFetch = activeMetrics.length ? activeMetrics : ['views'];
-  const apiMetrics = metricsToFetch.map(m => metricMap[m] || m).join(',');
-  const res = await fetch(`/api/youtube/analytics?start=${start}&end=${end}&metrics=${apiMetrics}`);
-  const data = await res.json();
-  document.getElementById('analytics-loading').style.display = 'none';
-  if (!data.rows) return;
-  const labels = data.rows.map(r => r[0].substring(0,7));
-  const colors = ['#00f5ff','#ff006e','#bf00ff'];
-  const datasets = metricsToFetch.map((metric, i) => ({
-    label: metric.replace('_',' '),
-    data: data.rows.map(r => parseFloat(r[i+1])),
-    borderColor: colors[i],
-    backgroundColor: 'transparent',
-    tension: 0.4,
-    pointRadius: 3,
-    pointBackgroundColor: colors[i]
+  if(!start||!end)return;
+  document.getElementById('analytics-loading').style.display='flex';
+  document.getElementById('analytics-content').style.display='none';
+  const metricMap={views:'views',watch_time:'estimatedMinutesWatched',subs:'subscribersGained'};
+  const metricsToFetch=activeMetrics.length?activeMetrics:['views'];
+  const apiMetrics=metricsToFetch.map(m=>metricMap[m]||m).join(',');
+  const res=await fetch(`/api/youtube/analytics?start=${start}&end=${end}&metrics=${apiMetrics}`);
+  const data=await res.json();
+  document.getElementById('analytics-loading').style.display='none';
+  document.getElementById('analytics-content').style.display='block';
+  if(!data.rows)return;
+  const labels=data.rows.map(r=>r[0].substring(0,7));
+  const datasets=metricsToFetch.map((metric,i)=>({
+    label:metric.replace('_',' '),
+    data:data.rows.map(r=>parseFloat(r[i+1])),
+    borderColor:'#00f5ff',
+    backgroundColor:'rgba(0,245,255,0.05)',
+    tension:0.4,
+    fill:i===0,
+    pointRadius:2,
+    pointBackgroundColor:'#00f5ff',
+    borderWidth:1.5
   }));
-  if (analyticsChart) analyticsChart.destroy();
-  analyticsChart = new Chart(document.getElementById('analyticsChart'), {
-    type: 'line',
-    data: { labels, datasets },
-    options: { plugins: { legend: { display: true, labels: { color: 'rgba(255,255,255,0.5)', boxWidth: 12 } } }, scales: { x: { ticks: { maxTicksLimit: 8, color: 'rgba(255,255,255,0.3)' }, grid: { color: 'rgba(255,255,255,0.03)' } }, y: { ticks: { color: 'rgba(255,255,255,0.3)' }, grid: { color: 'rgba(255,255,255,0.03)' } } } }
+  if(analyticsChart)analyticsChart.destroy();
+  analyticsChart=new Chart(document.getElementById('analyticsChart'),{
+    type:'line',
+    data:{labels,datasets},
+    options:{plugins:{legend:{display:metricsToFetch.length>1,labels:{color:'rgba(255,255,255,0.4)',boxWidth:10}}},scales:{x:{ticks:{maxTicksLimit:8}},y:{beginAtZero:true}}}
   });
 }
 
 async function loadUploadTime(filter, btn) {
-  if (btn) { document.querySelectorAll('#yt-uploadtime .filter-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
-  document.getElementById('uploadtime-loading').style.display = 'flex';
-  document.getElementById('uploadtime-content').style.display = 'none';
-  const res = await fetch('/api/youtube/upload-times?filter=' + filter);
-  const data = await res.json();
-  document.getElementById('uploadtime-loading').style.display = 'none';
-  document.getElementById('uploadtime-content').style.display = 'block';
-  if (data.error) return;
-  const maxAvg = Math.max(...data.days.map(d => d.avg));
-  document.getElementById('day-table').innerHTML =
-    `<tr><th>Day</th><th>Videos</th><th>Avg Views</th><th>Performance</th></tr>` +
-    data.days.map(d => `
-      <tr class="${d.day === data.best_day ? 'best' : ''}">
-        <td>${d.day}${d.day === data.best_day ? ' ⭐' : ''}</td>
+  if(btn){document.querySelectorAll('#yt-uploadtime .filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+  document.getElementById('uploadtime-loading').style.display='flex';
+  document.getElementById('uploadtime-content').style.display='none';
+  const res=await fetch('/api/youtube/upload-times-v2?filter='+filter);
+  const data=await res.json();
+  document.getElementById('uploadtime-loading').style.display='none';
+  document.getElementById('uploadtime-content').style.display='block';
+  if(data.error)return;
+
+  const maxAvg=Math.max(...data.days.map(d=>d.avg));
+
+  document.getElementById('day-table').innerHTML=
+    `<tr><th>Day</th><th>Posts</th><th>Avg Views</th><th>Bar</th></tr>`+
+    data.days.map(d=>`
+      <tr class="${d.day===data.best_day?'best':''}">
+        <td>${d.day}${d.day===data.best_day?' ⭐':''}</td>
         <td>${d.count}</td>
         <td>${d.avg.toLocaleString()}</td>
-        <td><div class="bar-wrap"><div class="bar" style="width:${maxAvg > 0 ? Math.round((d.avg/maxAvg)*80) : 0}px"></div></div></td>
+        <td><div class="bar-wrap"><div class="bar" style="width:${maxAvg>0?Math.round((d.avg/maxAvg)*80):0}px"></div></div></td>
       </tr>
     `).join('');
-  document.getElementById('best-time-badge').innerHTML = `
-    <div class="best-badge">⭐ Best time: ${data.best_day} at ${data.best_time} — based on ${data.total_analyzed} videos</div>
-  `;
-  if (uploadDayChart) uploadDayChart.destroy();
-  uploadDayChart = new Chart(document.getElementById('uploadDayChart'), {
-    type: 'bar',
-    data: {
-      labels: data.days.map(d => d.day.substring(0,3)),
-      datasets: [{ label: 'Avg Views', data: data.days.map(d => d.avg), backgroundColor: data.days.map(d => d.day === data.best_day ? 'rgba(0,245,255,0.6)' : 'rgba(255,255,255,0.06)'), borderColor: data.days.map(d => d.day === data.best_day ? '#00f5ff' : 'transparent'), borderWidth: 1, borderRadius: 4 }]
+
+  if(uploadDayChart)uploadDayChart.destroy();
+  uploadDayChart=new Chart(document.getElementById('uploadDayChart'),{
+    type:'bar',
+    data:{
+      labels:data.days.map(d=>d.day.substring(0,3)),
+      datasets:[{
+        data:data.days.map(d=>d.avg),
+        backgroundColor:data.days.map(d=>d.day===data.best_day?'rgba(0,245,255,0.5)':'rgba(255,255,255,0.05)'),
+        borderColor:data.days.map(d=>d.day===data.best_day?'rgba(0,245,255,0.8)':'transparent'),
+        borderWidth:1,
+        borderRadius:4
+      }]
     },
-    options: { plugins: { legend: { display: false } }, scales: { x: { ticks: { color: 'rgba(255,255,255,0.4)' }, grid: { color: 'rgba(255,255,255,0.03)' } }, y: { beginAtZero: true, ticks: { color: 'rgba(255,255,255,0.4)' }, grid: { color: 'rgba(255,255,255,0.03)' } } } }
+    options:{plugins:{legend:{display:false}},scales:{x:{ticks:{color:'rgba(255,255,255,0.4)'}},y:{beginAtZero:true}}}
   });
+
+  // Best time per day
+  if(data.best_times) {
+    document.getElementById('best-times-grid').innerHTML = data.days.map(d=>{
+      const bt = data.best_times[d.day];
+      const isTop = d.day === data.best_day;
+      return `
+        <div class="best-time-card ${isTop?'top':''}">
+          <div class="best-time-day">${d.day}</div>
+          <div class="best-time-val">${bt||'N/A'}</div>
+          <div class="best-time-views">${d.avg.toLocaleString()} avg views</div>
+        </div>
+      `;
+    }).join('');
+  }
 }
 
 loadOverview();
