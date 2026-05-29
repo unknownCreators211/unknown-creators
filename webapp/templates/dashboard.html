@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +31,6 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;display:flex;min-
 .tab:hover{color:rgba(255,255,255,0.6);}
 .tab.active{color:#00f5ff;border-bottom-color:#00f5ff;text-shadow:0 0 8px rgba(0,245,255,0.5);}
 .tab-content{display:none;}.tab-content.active{display:block;}
-
-/* Stats — auto fit */
 .stats-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
 .stat{background:#060606;border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:16px 18px;min-width:120px;flex:1;transition:all 0.2s;}
 .stat:hover{border-color:rgba(0,245,255,0.1);background:rgba(0,245,255,0.02);}
@@ -41,28 +38,21 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;display:flex;min-
 .stat-val{font-size:22px;font-weight:700;color:#fff;line-height:1;white-space:nowrap;}
 .stat-val.cyan{color:#00f5ff;text-shadow:0 0 15px rgba(0,245,255,0.4);}
 .stat-note{font-size:10px;color:rgba(255,255,255,0.2);margin-top:5px;}
-
-/* Insight box */
 .insights{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
 .insight{background:#060606;border:1px solid rgba(255,255,255,0.05);border-radius:8px;padding:12px 16px;font-size:12px;color:rgba(255,255,255,0.55);line-height:1.5;border-left:2px solid rgba(0,245,255,0.3);}
 .insight strong{color:#00f5ff;}
-
 .charts-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
 .chart-box{background:#060606;border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:20px;}
 .chart-label{font-size:9px;font-weight:600;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
-
-/* Filter */
 .filters{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center;}
-.fbtn{padding:5px 12px;border-radius:5px;border:1px solid rgba(255,255,255,0.07);background:transparent;color:rgba(255,255,255,0.3);font-size:10px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:0.5px;transition:all 0.15s;}
+.fbtn{padding:5px 12px;border-radius:5px;border:1px solid rgba(255,255,255,0.07);background:transparent;color:rgba(255,255,255,0.3);font-size:10px;font-weight:600;cursor:pointer;font-family:"Inter",sans-serif;text-transform:uppercase;letter-spacing:0.5px;transition:all 0.15s;}
 .fbtn:hover{color:rgba(255,255,255,0.6);border-color:rgba(0,245,255,0.15);}
 .fbtn.active{background:rgba(0,245,255,0.07);border-color:rgba(0,245,255,0.25);color:#00f5ff;text-shadow:0 0 6px rgba(0,245,255,0.4);}
-.apply{padding:5px 14px;border-radius:5px;border:1px solid rgba(0,245,255,0.25);background:rgba(0,245,255,0.07);color:#00f5ff;font-size:10px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:0.5px;text-shadow:0 0 6px rgba(0,245,255,0.4);}
+.apply{padding:5px 14px;border-radius:5px;border:1px solid rgba(0,245,255,0.25);background:rgba(0,245,255,0.07);color:#00f5ff;font-size:10px;font-weight:700;cursor:pointer;font-family:"Inter",sans-serif;text-transform:uppercase;letter-spacing:0.5px;text-shadow:0 0 6px rgba(0,245,255,0.4);}
 .date-wrap{display:flex;align-items:center;gap:6px;}
 .dlabel{font-size:9px;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:1px;}
-.dinput{padding:5px 8px;border-radius:5px;border:1px solid rgba(255,255,255,0.07);background:#060606;color:rgba(255,255,255,0.55);font-size:11px;font-family:'Inter',sans-serif;color-scheme:dark;}
+.dinput{padding:5px 8px;border-radius:5px;border:1px solid rgba(255,255,255,0.07);background:#060606;color:rgba(255,255,255,0.55);font-size:11px;font-family:"Inter",sans-serif;color-scheme:dark;}
 .dinput:focus{outline:none;border-color:rgba(0,245,255,0.2);}
-
-/* Videos */
 .video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;}
 .vcard{background:#060606;border:1px solid rgba(255,255,255,0.05);border-radius:8px;overflow:hidden;cursor:pointer;transition:all 0.2s;}
 .vcard:hover{border-color:rgba(0,245,255,0.12);transform:translateY(-2px);}
@@ -72,8 +62,6 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;display:flex;min-
 .vmeta{display:flex;gap:8px;flex-wrap:wrap;}
 .vm{font-size:10px;color:rgba(255,255,255,0.28);}
 .vm.c{color:#00f5ff;text-shadow:0 0 5px rgba(0,245,255,0.3);}
-
-/* Upload time */
 .upload-layout{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
 .day-table{width:100%;border-collapse:collapse;}
 .day-table th{text-align:left;padding:7px 10px;font-size:9px;color:rgba(255,255,255,0.2);font-weight:600;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid rgba(255,255,255,0.04);}
@@ -89,49 +77,40 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;display:flex;min-
 .bttime{font-size:18px;font-weight:700;color:#fff;}
 .btcard.top .bttime{color:#00f5ff;text-shadow:0 0 12px rgba(0,245,255,0.5);}
 .btviews{font-size:10px;color:rgba(255,255,255,0.2);margin-top:3px;}
-
-/* Loading */
 .loading{display:flex;align-items:center;justify-content:center;padding:60px;color:rgba(255,255,255,0.2);font-size:12px;gap:10px;}
 .spin{width:16px;height:16px;border:1px solid rgba(0,245,255,0.1);border-top-color:#00f5ff;border-radius:50%;animation:spin 0.7s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* Coming soon */
 .cs{display:flex;flex-direction:column;align-items:center;justify-content:center;height:55vh;gap:12px;}
-.cs h2{font-size:20px;font-weight:700;color:#fff;text-shadow:0 0 15px rgba(255,255,255,0.15);}
+.cs h2{font-size:20px;font-weight:700;color:#fff;}
 .cs p{font-size:12px;color:rgba(255,255,255,0.2);}
-.cs .tag{font-size:9px;color:#00f5ff;background:rgba(0,245,255,0.05);border:1px solid rgba(0,245,255,0.1);padding:4px 12px;border-radius:20px;letter-spacing:2px;text-transform:uppercase;text-shadow:0 0 6px rgba(0,245,255,0.5);}
-
+.cs .tag{font-size:9px;color:#00f5ff;background:rgba(0,245,255,0.05);border:1px solid rgba(0,245,255,0.1);padding:4px 12px;border-radius:20px;letter-spacing:2px;text-transform:uppercase;}
 ::-webkit-scrollbar{width:3px;}
 ::-webkit-scrollbar-thumb{background:rgba(0,245,255,0.12);border-radius:2px;}
 </style>
 </head>
 <body>
-
 <div class="sidebar">
   <div class="logo">
     <div class="logo-name">Unknown<br>Creators</div>
     <div class="logo-tag">Analytics</div>
   </div>
   <nav class="nav">
-    <div class="nav-item active" onclick="showPage('youtube',this)">▶ YouTube</div>
-    <div class="nav-item" onclick="showPage('tiktok',this)">♪ TikTok <span class="badge">Soon</span></div>
-    <div class="nav-item" onclick="showPage('instagram',this)">◈ Instagram <span class="badge">Soon</span></div>
-    <div class="nav-item" onclick="showPage('twitch',this)">◉ Twitch <span class="badge">Soon</span></div>
-    <div class="nav-item" onclick="showPage('spotify',this)">● Spotify <span class="badge">Soon</span></div>
-    <div class="nav-item" onclick="showPage('soundcloud',this)">◎ SoundCloud <span class="badge">Soon</span></div>
-    <div class="nav-item" onclick="showPage('twitter',this)">✕ Twitter/X <span class="badge">Soon</span></div>
-    <div class="nav-item" onclick="showPage('reddit',this)">◆ Reddit <span class="badge">Soon</span></div>
-    <div class="nav-item" onclick="showPage('trends',this)">↑ Trends <span class="badge">Soon</span></div>
+    <div class="nav-item active" onclick="showPage('youtube',this)">&#9654; YouTube</div>
+    <div class="nav-item" onclick="showPage('tiktok',this)">&#9834; TikTok <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('instagram',this)">&#9672; Instagram <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('twitch',this)">&#9673; Twitch <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('spotify',this)">&#9679; Spotify <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('soundcloud',this)">&#9678; SoundCloud <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('twitter',this)">&#10005; Twitter/X <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('reddit',this)">&#9670; Reddit <span class="badge">Soon</span></div>
+    <div class="nav-item" onclick="showPage('trends',this)">&#8593; Trends <span class="badge">Soon</span></div>
   </nav>
 </div>
-
 <div class="main">
   <div class="topbar">
     <div class="page-title" id="page-title">YouTube <span>Analytics</span></div>
     <div class="live"><div class="live-dot"></div>LIVE</div>
   </div>
-
-  <!-- YOUTUBE -->
   <div class="page active" id="page-youtube">
     <div class="tabs">
       <div class="tab active" onclick="showTab('yt','overview',this)">Overview</div>
@@ -140,27 +119,17 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;display:flex;min-
       <div class="tab" onclick="showTab('yt','uploadtime',this)">Upload Time</div>
       <div class="tab" onclick="showTab('yt','worst',this)">Worst Videos</div>
     </div>
-
-    <!-- OVERVIEW TAB ONLY -->
     <div class="tab-content active" id="yt-overview">
       <div class="loading" id="ov-load"><div class="spin"></div>Loading your channel...</div>
       <div id="ov-content" style="display:none">
         <div class="stats-row" id="stats-row"></div>
         <div class="insights" id="insights"></div>
         <div class="charts-row">
-          <div class="chart-box">
-            <div class="chart-label">Subscriber Growth</div>
-            <canvas id="subChart" height="140"></canvas>
-          </div>
-          <div class="chart-box">
-            <div class="chart-label">Monthly Views</div>
-            <canvas id="viewChart" height="140"></canvas>
-          </div>
+          <div class="chart-box"><div class="chart-label">Subscriber Growth</div><canvas id="subChart" height="140"></canvas></div>
+          <div class="chart-box"><div class="chart-label">Monthly Views</div><canvas id="viewChart" height="140"></canvas></div>
         </div>
       </div>
     </div>
-
-    <!-- TOP VIDEOS TAB ONLY -->
     <div class="tab-content" id="yt-videos">
       <div class="filters">
         <button class="fbtn active" onclick="loadVideos('all',this)">All</button>
@@ -170,8 +139,6 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;display:flex;min-
       <div class="loading" id="vid-load"><div class="spin"></div>Loading...</div>
       <div id="vid-content" style="display:none"><div class="video-grid" id="vid-grid"></div></div>
     </div>
-
-    <!-- ANALYTICS TAB ONLY -->
     <div class="tab-content" id="yt-analytics">
       <div class="filters">
         <div class="date-wrap">
@@ -186,15 +153,8 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;display:flex;min-
         <button class="apply" onclick="loadAnalytics()">Apply</button>
       </div>
       <div class="loading" id="an-load" style="display:none"><div class="spin"></div>Loading...</div>
-      <div id="an-content">
-        <div class="chart-box">
-          <div class="chart-label">Performance Over Time</div>
-          <canvas id="anChart" height="120"></canvas>
-        </div>
-      </div>
+      <div id="an-content"><div class="chart-box"><div class="chart-label">Performance Over Time</div><canvas id="anChart" height="120"></canvas></div></div>
     </div>
-
-    <!-- UPLOAD TIME TAB ONLY -->
     <div class="tab-content" id="yt-uploadtime">
       <div class="filters">
         <button class="fbtn active" onclick="loadUpload('all',this)">All</button>
@@ -204,23 +164,12 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;display:flex;min-
       <div class="loading" id="up-load"><div class="spin"></div>Analyzing your upload history...</div>
       <div id="up-content" style="display:none">
         <div class="upload-layout">
-          <div class="chart-box">
-            <div class="chart-label">Avg Views by Day Posted</div>
-            <canvas id="dayChart" height="180"></canvas>
-          </div>
-          <div class="chart-box">
-            <div class="chart-label">Day Breakdown</div>
-            <table class="day-table" id="day-tbl"></table>
-          </div>
+          <div class="chart-box"><div class="chart-label">Avg Views by Day Posted</div><canvas id="dayChart" height="180"></canvas></div>
+          <div class="chart-box"><div class="chart-label">Day Breakdown</div><table class="day-table" id="day-tbl"></table></div>
         </div>
-        <div class="chart-box">
-          <div class="chart-label">Best Time to Post — Per Day</div>
-          <div class="best-times" id="best-times"></div>
-        </div>
+        <div class="chart-box"><div class="chart-label">Best Time to Post Per Day</div><div class="best-times" id="best-times"></div></div>
       </div>
     </div>
-
-    <!-- WORST VIDEOS TAB ONLY -->
     <div class="tab-content" id="yt-worst">
       <div class="filters">
         <button class="fbtn active" onclick="loadWorst('all',this)">All</button>
@@ -231,243 +180,61 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff;display:flex;min-
       <div id="wr-content" style="display:none"><div class="video-grid" id="wr-grid"></div></div>
     </div>
   </div>
-
-  <!-- OTHER PLATFORMS -->
-  <div class="page" id="page-tiktok"><div class="cs"><h2>TikTok Analytics</h2><p>TikTok Research API integration</p><div class="tag">In Development</div></div></div>
-  <div class="page" id="page-instagram"><div class="cs"><h2>Instagram Analytics</h2><p>Instagram Graph API integration</p><div class="tag">In Development</div></div></div>
-  <div class="page" id="page-twitch"><div class="cs"><h2>Twitch Analytics</h2><p>Twitch API integration</p><div class="tag">In Development</div></div></div>
-  <div class="page" id="page-spotify"><div class="cs"><h2>Spotify Analytics</h2><p>Spotify API integration</p><div class="tag">In Development</div></div></div>
-  <div class="page" id="page-soundcloud"><div class="cs"><h2>SoundCloud Analytics</h2><p>SoundCloud integration</p><div class="tag">In Development</div></div></div>
-  <div class="page" id="page-twitter"><div class="cs"><h2>Twitter/X Analytics</h2><p>Twitter API integration</p><div class="tag">In Development</div></div></div>
-  <div class="page" id="page-reddit"><div class="cs"><h2>Reddit Analytics</h2><p>Reddit API integration</p><div class="tag">In Development</div></div></div>
-  <div class="page" id="page-trends"><div class="cs"><h2>Trending Topics</h2><p>Google Trends integration</p><div class="tag">In Development</div></div></div>
+  <div class="page" id="page-tiktok"><div class="cs"><h2>TikTok Analytics</h2><p>TikTok Research API coming soon</p><div class="tag">In Development</div></div></div>
+  <div class="page" id="page-instagram"><div class="cs"><h2>Instagram Analytics</h2><p>Instagram Graph API coming soon</p><div class="tag">In Development</div></div></div>
+  <div class="page" id="page-twitch"><div class="cs"><h2>Twitch Analytics</h2><p>Twitch API coming soon</p><div class="tag">In Development</div></div></div>
+  <div class="page" id="page-spotify"><div class="cs"><h2>Spotify Analytics</h2><p>Spotify API coming soon</p><div class="tag">In Development</div></div></div>
+  <div class="page" id="page-soundcloud"><div class="cs"><h2>SoundCloud Analytics</h2><p>SoundCloud coming soon</p><div class="tag">In Development</div></div></div>
+  <div class="page" id="page-twitter"><div class="cs"><h2>Twitter/X Analytics</h2><p>Twitter API coming soon</p><div class="tag">In Development</div></div></div>
+  <div class="page" id="page-reddit"><div class="cs"><h2>Reddit Analytics</h2><p>Reddit API coming soon</p><div class="tag">In Development</div></div></div>
+  <div class="page" id="page-trends"><div class="cs"><h2>Trending Topics</h2><p>Google Trends coming soon</p><div class="tag">In Development</div></div></div>
 </div>
-
 <script>
-Chart.defaults.color='rgba(255,255,255,0.28)';
-Chart.defaults.borderColor='rgba(255,255,255,0.04)';
-
-let anChart=null,subChart=null,viewChart=null,dayChart=null;
-let activeM=['views'];
-
-const now=new Date();
-const threeAgo=new Date(now);
+Chart.defaults.color="rgba(255,255,255,0.28)";
+Chart.defaults.borderColor="rgba(255,255,255,0.04)";
+let anChart=null,subChart=null,viewChart=null,dayChart=null,activeM=["views"];
+const now=new Date(),threeAgo=new Date(now);
 threeAgo.setMonth(threeAgo.getMonth()-3);
-document.getElementById('d-start').value=threeAgo.toISOString().split('T')[0];
-document.getElementById('d-end').value=now.toISOString().split('T')[0];
-
-function showPage(name,el){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById('page-'+name).classList.add('active');
-  el.classList.add('active');
-  const t={youtube:'YouTube <span>Analytics</span>',tiktok:'TikTok <span>Analytics</span>',instagram:'Instagram <span>Analytics</span>',twitch:'Twitch <span>Analytics</span>',spotify:'Spotify <span>Analytics</span>',soundcloud:'SoundCloud <span>Analytics</span>',twitter:'Twitter/X <span>Analytics</span>',reddit:'Reddit <span>Analytics</span>',trends:'Trending <span>Topics</span>'};
-  document.getElementById('page-title').innerHTML=t[name]||name;
-}
-
-function showTab(page,tab,el){
-  document.querySelectorAll(`#page-${page} .tab`).forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll(`#page-${page} .tab-content`).forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById(`${page}-${tab}`).classList.add('active');
-  if(page==='yt'){
-    if(tab==='videos') loadVideos('all');
-    else if(tab==='uploadtime') loadUpload('all');
-    else if(tab==='worst') loadWorst('all');
-    else if(tab==='analytics') loadAnalytics();
-  }
-}
-
-function toggleM(btn,m){
-  btn.classList.toggle('active');
-  if(activeM.includes(m)) activeM=activeM.filter(x=>x!==m);
-  else activeM.push(m);
-}
-
-function stat(label,val,cyan=false,note=''){
-  return `<div class="stat"><div class="stat-label">${label}</div><div class="stat-val${cyan?' cyan':''}">${val}</div>${note?`<div class="stat-note">${note}</div>`:''}</div>`;
-}
-
-function insight(text){return `<div class="insight">${text}</div>`;}
-
+document.getElementById("d-start").value=threeAgo.toISOString().split("T")[0];
+document.getElementById("d-end").value=now.toISOString().split("T")[0];
+function showPage(name,el){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));document.querySelectorAll(".nav-item").forEach(n=>n.classList.remove("active"));document.getElementById("page-"+name).classList.add("active");el.classList.add("active");const t={youtube:"YouTube <span>Analytics</span>",tiktok:"TikTok <span>Analytics</span>",instagram:"Instagram <span>Analytics</span>",twitch:"Twitch <span>Analytics</span>",spotify:"Spotify <span>Analytics</span>",soundcloud:"SoundCloud <span>Analytics</span>",twitter:"Twitter/X <span>Analytics</span>",reddit:"Reddit <span>Analytics</span>",trends:"Trending <span>Topics</span>"};document.getElementById("page-title").innerHTML=t[name]||name;}
+function showTab(page,tab,el){document.querySelectorAll("#page-"+page+" .tab").forEach(t=>t.classList.remove("active"));document.querySelectorAll("#page-"+page+" .tab-content").forEach(t=>t.classList.remove("active"));el.classList.add("active");document.getElementById(page+"-"+tab).classList.add("active");if(page==="yt"){if(tab==="videos")loadVideos("all");else if(tab==="uploadtime")loadUpload("all");else if(tab==="worst")loadWorst("all");else if(tab==="analytics")loadAnalytics();}}
+function toggleM(btn,m){btn.classList.toggle("active");if(activeM.includes(m))activeM=activeM.filter(x=>x!==m);else activeM.push(m);}
+function statEl(label,val,cyan,note){return "<div class=\"stat\"><div class=\"stat-label\">"+label+"</div><div class=\"stat-val"+(cyan?" cyan":"")+"\">"+val+"</div>"+(note?"<div class=\"stat-note\">"+note+"</div>":"")+"</div>";}
+function insightEl(text){return "<div class=\"insight\">"+text+"</div>";}
 async function loadOverview(){
-  const r=await fetch('/api/youtube/overview');
-  const d=await r.json();
-  if(d.error){document.getElementById('ov-load').innerHTML=`<span style="color:rgba(255,80,80,0.7)">Failed to load — try refreshing</span>`;return;}
-  document.getElementById('ov-load').style.display='none';
-  document.getElementById('ov-content').style.display='block';
-
-  const subsNum=parseInt(d.subscribers.replace(/[KM]/g,x=>x==='K'?'000':'000000'))||0;
-  const viewsNum=parseInt(d.total_views.replace(/[KM]/g,x=>x==='K'?'000':'000000'))||0;
-  const avgNum=parseInt(d.avg_views)||0;
-
-  document.getElementById('stats-row').innerHTML=
-    stat('Channel',d.channel_name)+
-    stat('Subscribers',d.subscribers,true)+
-    stat('Total Views',d.total_views)+
-    stat('Videos',d.total_videos)+
-    stat('Watch Time',d.watch_time+' mins',true)+
-    stat('Avg Duration',d.avg_duration)+
-    stat('Avg Views/Video',d.avg_views,avgNum>500)+
-    stat('Subs Gained',d.subs_gained,true,'All time')+
-    stat('Subs Lost',d.subs_lost,false,'All time')+
-    stat('Net Subs',d.net_subs,true)+
-    stat('Stage',d.stage);
-
-  // Real insights
-  const ins=[];
-  const gained=parseInt(d.subs_gained)||0;
-  const lost=parseInt(d.subs_lost)||0;
-  const retentionRate=gained>0?Math.round((1-(lost/gained))*100):0;
-  ins.push(insight(`You have <strong>${d.subscribers} subscribers</strong> with <strong>${d.total_views} total views</strong> — that's roughly ${Math.round(viewsNum/(subsNum||1))} views per subscriber.`));
-  ins.push(insight(`You gained <strong>${d.subs_gained} subscribers</strong> all time and lost <strong>${d.subs_lost}</strong>. Your subscriber retention rate is <strong>${retentionRate}%</strong>.`));
-  ins.push(insight(`Your average video gets <strong>${d.avg_views} views</strong> with an average watch time of <strong>${d.avg_duration}</strong>. ${avgNum<500?'Views per video are on the lower end — consistency and thumbnails are key.':'Strong average view count for your channel size.'}`));
-  ins.push(insight(`Channel stage: <strong>${d.stage}</strong>. ${d.stage==='Early Stage'?'Focus on consistency and finding your niche to grow faster.':d.stage==='Growing'?'You\'re gaining traction. Double down on what\'s working.':'Your channel has strong momentum. Scale what works.'}`));
-  document.getElementById('insights').innerHTML=ins.join('');
-
-  const todayStr=now.toISOString().split('T')[0];
-
-  // Sub growth
-  const sg=await fetch(`/api/youtube/analytics?start=2020-01-01&end=${todayStr}&metrics=subscribersGained`);
+  const r=await fetch("/api/youtube/overview");const d=await r.json();
+  if(d.error){document.getElementById("ov-load").innerHTML="<span style='color:rgba(255,80,80,0.7)'>Failed to load</span>";return;}
+  document.getElementById("ov-load").style.display="none";document.getElementById("ov-content").style.display="block";
+  const subsN=parseFloat((d.subscribers||"0").replace("K","e3").replace("M","e6"))||0;
+  const viewsN=parseFloat((d.total_views||"0").replace("K","e3").replace("M","e6"))||0;
+  const avgN=parseFloat((d.avg_views||"0").replace("K","e3").replace("M","e6"))||0;
+  const gainedN=parseFloat((d.subs_gained||"0").replace("K","e3").replace("M","e6"))||0;
+  const lostN=parseFloat((d.subs_lost||"0").replace("K","e3").replace("M","e6"))||0;
+  const ret=gainedN>0?Math.round((1-(lostN/gainedN))*100):0;
+  document.getElementById("stats-row").innerHTML=
+    statEl("Channel",d.channel_name,false)+statEl("Subscribers",d.subscribers,true)+statEl("Total Views",d.total_views,false)+
+    statEl("Videos",d.total_videos,false)+statEl("Watch Time",d.watch_time+" mins",true)+statEl("Avg Duration",d.avg_duration,false)+
+    statEl("Avg Views/Video",d.avg_views,avgN>500)+statEl("Subs Gained",d.subs_gained,true,"All time")+
+    statEl("Subs Lost",d.subs_lost,false,"All time")+statEl("Net Subs",d.net_subs,true)+statEl("Stage",d.stage,false);
+  document.getElementById("insights").innerHTML=
+    insightEl("You have <strong>"+d.subscribers+" subscribers</strong> with <strong>"+d.total_views+" total views</strong> — roughly "+Math.round(viewsN/(subsN||1))+" views per subscriber.")+
+    insightEl("You gained <strong>"+d.subs_gained+" subscribers</strong> all time and lost <strong>"+d.subs_lost+"</strong>. Subscriber retention rate: <strong>"+ret+"%</strong>.")+
+    insightEl("Your average video gets <strong>"+d.avg_views+" views</strong> with <strong>"+d.avg_duration+"</strong> avg watch time. "+(avgN<500?"Views per video are low — focus on thumbnails and titles.":"Strong average for your channel size."))+
+    insightEl("Channel stage: <strong>"+d.stage+"</strong>. "+(d.stage==="Early Stage"?"Focus on consistency and niche to grow faster.":d.stage==="Growing"?"You are gaining traction. Double down on what works.":"Strong momentum. Scale what is working."));
+  const todayStr=now.toISOString().split("T")[0];
+  const sg=await fetch("/api/youtube/analytics?start=2020-01-01&end="+todayStr+"&metrics=subscribersGained");
   const sgd=await sg.json();
-  if(sgd.rows&&sgd.rows.length){
-    const labels=sgd.rows.map(r=>r[0].substring(0,7));
-    const vals=sgd.rows.map(r=>parseInt(r[1]));
-    if(subChart)subChart.destroy();
-    subChart=new Chart(document.getElementById('subChart'),{
-      type:'line',
-      data:{labels,datasets:[{data:vals,borderColor:'#00f5ff',backgroundColor:'rgba(0,245,255,0.04)',tension:0.4,fill:true,pointRadius:2,pointBackgroundColor:'#00f5ff',borderWidth:1.5}]},
-      options:{plugins:{legend:{display:false}},scales:{x:{ticks:{maxTicksLimit:6}},y:{beginAtZero:true}}}
-    });
-  }
-
-  // Views
-  const vr=await fetch(`/api/youtube/analytics?start=2020-01-01&end=${todayStr}&metrics=views`);
+  if(sgd.rows&&sgd.rows.length){const lb=sgd.rows.map(r=>r[0].substring(0,7));const vl=sgd.rows.map(r=>parseInt(r[1]));if(subChart)subChart.destroy();subChart=new Chart(document.getElementById("subChart"),{type:"line",data:{labels:lb,datasets:[{data:vl,borderColor:"#00f5ff",backgroundColor:"rgba(0,245,255,0.04)",tension:0.4,fill:true,pointRadius:2,pointBackgroundColor:"#00f5ff",borderWidth:1.5}]},options:{plugins:{legend:{display:false}},scales:{x:{ticks:{maxTicksLimit:6}},y:{beginAtZero:true}}}});}
+  const vr=await fetch("/api/youtube/analytics?start=2020-01-01&end="+todayStr+"&metrics=views");
   const vd=await vr.json();
-  if(vd.rows&&vd.rows.length){
-    const labels=vd.rows.map(r=>r[0].substring(0,7));
-    const vals=vd.rows.map(r=>parseInt(r[1]));
-    if(viewChart)viewChart.destroy();
-    viewChart=new Chart(document.getElementById('viewChart'),{
-      type:'bar',
-      data:{labels,datasets:[{data:vals,backgroundColor:'rgba(0,245,255,0.12)',borderColor:'rgba(0,245,255,0.3)',borderWidth:1,borderRadius:3}]},
-      options:{plugins:{legend:{display:false}},scales:{x:{ticks:{maxTicksLimit:6}},y:{beginAtZero:true}}}
-    });
-  }
+  if(vd.rows&&vd.rows.length){const lb=vd.rows.map(r=>r[0].substring(0,7));const vl=vd.rows.map(r=>parseInt(r[1]));if(viewChart)viewChart.destroy();viewChart=new Chart(document.getElementById("viewChart"),{type:"bar",data:{labels:lb,datasets:[{data:vl,backgroundColor:"rgba(0,245,255,0.12)",borderColor:"rgba(0,245,255,0.3)",borderWidth:1,borderRadius:3}]},options:{plugins:{legend:{display:false}},scales:{x:{ticks:{maxTicksLimit:6}},y:{beginAtZero:true}}}});}
 }
-
-function videoCard(v){
-  return `<div class="vcard" onclick="window.open('${v.url}','_blank')">
-    <img src="${v.thumbnail}" alt="" loading="lazy">
-    <div class="vinfo">
-      <div class="vtitle">${v.title}</div>
-      <div class="vmeta">
-        <span class="vm c">👁 ${v.views}</span>
-        <span class="vm">♥ ${v.likes}</span>
-        <span class="vm">◈ ${v.engagement}</span>
-      </div>
-    </div>
-  </div>`;
-}
-
-async function loadVideos(filter,btn){
-  if(btn){document.querySelectorAll('#yt-videos .fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
-  document.getElementById('vid-load').style.display='flex';
-  document.getElementById('vid-content').style.display='none';
-  const r=await fetch('/api/youtube/top-videos?filter='+filter);
-  const d=await r.json();
-  document.getElementById('vid-load').style.display='none';
-  document.getElementById('vid-content').style.display='block';
-  if(d.error)return;
-  document.getElementById('vid-grid').innerHTML=d.map(videoCard).join('');
-}
-
-async function loadWorst(filter,btn){
-  if(btn){document.querySelectorAll('#yt-worst .fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
-  document.getElementById('wr-load').style.display='flex';
-  document.getElementById('wr-content').style.display='none';
-  const r=await fetch('/api/youtube/top-videos?filter='+filter);
-  let d=await r.json();
-  if(d.error)return;
-  d=d.sort((a,b)=>a.views_raw-b.views_raw);
-  document.getElementById('wr-load').style.display='none';
-  document.getElementById('wr-content').style.display='block';
-  document.getElementById('wr-grid').innerHTML=d.map(videoCard).join('');
-}
-
-async function loadAnalytics(){
-  const start=document.getElementById('d-start').value;
-  const end=document.getElementById('d-end').value;
-  if(!start||!end)return;
-  document.getElementById('an-load').style.display='flex';
-  document.getElementById('an-content').style.display='none';
-  const mm={views:'views',watch_time:'estimatedMinutesWatched',subs:'subscribersGained'};
-  const mf=activeM.length?activeM:['views'];
-  const api=mf.map(m=>mm[m]||m).join(',');
-  const r=await fetch(`/api/youtube/analytics?start=${start}&end=${end}&metrics=${api}`);
-  const d=await r.json();
-  document.getElementById('an-load').style.display='none';
-  document.getElementById('an-content').style.display='block';
-  if(!d.rows)return;
-  const labels=d.rows.map(r=>r[0].substring(0,7));
-  const ds=mf.map((m,i)=>({
-    label:m.replace('_',' '),
-    data:d.rows.map(r=>parseFloat(r[i+1])),
-    borderColor:'#00f5ff',
-    backgroundColor:'rgba(0,245,255,0.04)',
-    tension:0.4,fill:i===0,
-    pointRadius:2,pointBackgroundColor:'#00f5ff',borderWidth:1.5
-  }));
-  if(anChart)anChart.destroy();
-  anChart=new Chart(document.getElementById('anChart'),{
-    type:'line',data:{labels,datasets:ds},
-    options:{plugins:{legend:{display:mf.length>1,labels:{color:'rgba(255,255,255,0.35)',boxWidth:10}}},scales:{x:{ticks:{maxTicksLimit:8}},y:{beginAtZero:true}}}
-  });
-}
-
-async function loadUpload(filter,btn){
-  if(btn){document.querySelectorAll('#yt-uploadtime .fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
-  document.getElementById('up-load').style.display='flex';
-  document.getElementById('up-content').style.display='none';
-  const r=await fetch('/api/youtube/upload-times-v2?filter='+filter);
-  const d=await r.json();
-  document.getElementById('up-load').style.display='none';
-  document.getElementById('up-content').style.display='block';
-  if(d.error)return;
-
-  const maxAvg=Math.max(...d.days.map(x=>x.avg));
-  document.getElementById('day-tbl').innerHTML=
-    `<tr><th>Day</th><th>Posted</th><th>Avg Views</th><th></th></tr>`+
-    d.days.map(x=>`<tr class="${x.day===d.best_day?'best':''}">
-      <td>${x.day}${x.day===d.best_day?' ⭐':''}</td>
-      <td>${x.count}</td>
-      <td>${x.avg.toLocaleString()}</td>
-      <td><div class="bar-row"><div class="bar" style="width:${maxAvg>0?Math.round((x.avg/maxAvg)*70):0}px"></div></div></td>
-    </tr>`).join('');
-
-  if(dayChart)dayChart.destroy();
-  dayChart=new Chart(document.getElementById('dayChart'),{
-    type:'bar',
-    data:{
-      labels:d.days.map(x=>x.day.substring(0,3)),
-      datasets:[{data:d.days.map(x=>x.avg),backgroundColor:d.days.map(x=>x.day===d.best_day?'rgba(0,245,255,0.4)':'rgba(255,255,255,0.05)'),borderColor:d.days.map(x=>x.day===d.best_day?'rgba(0,245,255,0.7)':'transparent'),borderWidth:1,borderRadius:4}]
-    },
-    options:{plugins:{legend:{display:false}},scales:{x:{ticks:{color:'rgba(255,255,255,0.35)'}},y:{beginAtZero:true}}}
-  });
-
-  if(d.best_times){
-    document.getElementById('best-times').innerHTML=d.days.map(x=>{
-      const bt=d.best_times[x.day]||'No data';
-      const top=x.day===d.best_day;
-      return `<div class="btcard${top?' top':''}">
-        <div class="btday">${x.day}</div>
-        <div class="bttime">${bt}</div>
-        <div class="btviews">${x.avg.toLocaleString()} avg views</div>
-      </div>`;
-    }).join('');
-  }
-}
-
+function vcard(v){return "<div class=\"vcard\" onclick=\"window.open('"+v.url+"','_blank')\"><img src=\""+v.thumbnail+"\" alt=\"\"><div class=\"vinfo\"><div class=\"vtitle\">"+v.title+"</div><div class=\"vmeta\"><span class=\"vm c\">Views: "+v.views+"</span><span class=\"vm\">Likes: "+v.likes+"</span><span class=\"vm\">Eng: "+v.engagement+"</span></div></div></div>";}
+async function loadVideos(filter,btn){if(btn){document.querySelectorAll("#yt-videos .fbtn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");}document.getElementById("vid-load").style.display="flex";document.getElementById("vid-content").style.display="none";const r=await fetch("/api/youtube/top-videos?filter="+filter);const d=await r.json();document.getElementById("vid-load").style.display="none";document.getElementById("vid-content").style.display="block";if(d.error)return;document.getElementById("vid-grid").innerHTML=d.map(vcard).join("");}
+async function loadWorst(filter,btn){if(btn){document.querySelectorAll("#yt-worst .fbtn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");}document.getElementById("wr-load").style.display="flex";document.getElementById("wr-content").style.display="none";const r=await fetch("/api/youtube/top-videos?filter="+filter);let d=await r.json();if(d.error)return;d=d.sort((a,b)=>a.views_raw-b.views_raw);document.getElementById("wr-load").style.display="none";document.getElementById("wr-content").style.display="block";document.getElementById("wr-grid").innerHTML=d.map(vcard).join("");}
+async function loadAnalytics(){const start=document.getElementById("d-start").value;const end=document.getElementById("d-end").value;if(!start||!end)return;document.getElementById("an-load").style.display="flex";document.getElementById("an-content").style.display="none";const mm={views:"views",watch_time:"estimatedMinutesWatched",subs:"subscribersGained"};const mf=activeM.length?activeM:["views"];const api=mf.map(m=>mm[m]||m).join(",");const r=await fetch("/api/youtube/analytics?start="+start+"&end="+end+"&metrics="+api);const d=await r.json();document.getElementById("an-load").style.display="none";document.getElementById("an-content").style.display="block";if(!d.rows)return;const labels=d.rows.map(r=>r[0].substring(0,7));const ds=mf.map((m,i)=>({label:m.replace("_"," "),data:d.rows.map(r=>parseFloat(r[i+1])),borderColor:"#00f5ff",backgroundColor:"rgba(0,245,255,0.04)",tension:0.4,fill:i===0,pointRadius:2,pointBackgroundColor:"#00f5ff",borderWidth:1.5}));if(anChart)anChart.destroy();anChart=new Chart(document.getElementById("anChart"),{type:"line",data:{labels,datasets:ds},options:{plugins:{legend:{display:mf.length>1,labels:{color:"rgba(255,255,255,0.35)",boxWidth:10}}},scales:{x:{ticks:{maxTicksLimit:8}},y:{beginAtZero:true}}}});}
+async function loadUpload(filter,btn){if(btn){document.querySelectorAll("#yt-uploadtime .fbtn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");}document.getElementById("up-load").style.display="flex";document.getElementById("up-content").style.display="none";const r=await fetch("/api/youtube/upload-times-v2?filter="+filter);const d=await r.json();document.getElementById("up-load").style.display="none";document.getElementById("up-content").style.display="block";if(d.error)return;const mx=Math.max(...d.days.map(x=>x.avg));document.getElementById("day-tbl").innerHTML="<tr><th>Day</th><th>Posts</th><th>Avg Views</th><th></th></tr>"+d.days.map(x=>"<tr class=\""+( x.day===d.best_day?"best":"")+"\">"+"<td>"+x.day+(x.day===d.best_day?" ★":"")+"</td><td>"+x.count+"</td><td>"+x.avg.toLocaleString()+"</td><td><div class=\"bar-row\"><div class=\"bar\" style=\"width:"+(mx>0?Math.round((x.avg/mx)*70):0)+"px\"></div></div></td></tr>").join("");if(dayChart)dayChart.destroy();dayChart=new Chart(document.getElementById("dayChart"),{type:"bar",data:{labels:d.days.map(x=>x.day.substring(0,3)),datasets:[{data:d.days.map(x=>x.avg),backgroundColor:d.days.map(x=>x.day===d.best_day?"rgba(0,245,255,0.4)":"rgba(255,255,255,0.05)"),borderColor:d.days.map(x=>x.day===d.best_day?"rgba(0,245,255,0.7)":"transparent"),borderWidth:1,borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{x:{ticks:{color:"rgba(255,255,255,0.35)"}},y:{beginAtZero:true}}}});if(d.best_times){document.getElementById("best-times").innerHTML=d.days.map(x=>{const bt=d.best_times[x.day]||"No data";const top=x.day===d.best_day;return "<div class=\"btcard"+(top?" top")+"\">"+"<div class=\"btday\">"+x.day+"</div>"+"<div class=\"bttime\">"+bt+"</div>"+"<div class=\"btviews\">"+x.avg.toLocaleString()+" avg views</div></div>";}).join("");}}
 loadOverview();
 </script>
 </body>
